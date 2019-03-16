@@ -17,12 +17,21 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Are you sure you want to delete this item?' => '',
     'Categories' => 'Категории',
-    'Create Category' => '',
-    'Delete' => '',
-    'Save' => '',
-    'The requested page does not exist.' => '',
-    'Update' => '',
-    'Update Category: {name}' => '',
+    'Are you sure you want to delete this item?' => 'Вы действительно хотите удалить эту запись?',
+    'Create Category' => 'Добавить категорию',
+    'Create Photo Doc' => 'Добавить документ',
+    'Create User Customer' => 'Добавить пользователя',
+    'Create Userdetail' => 'Добавить данные о пользователе',
+    'Delete' => 'Удалить',
+    'Photo Docs' => 'Документ',
+    'Save' => 'Сохранить',
+    'The requested page does not exist.' => 'Запрашиваемая страница не найдена',
+    'Update' => 'Изменить',
+    'Update Category: {name}' => 'Изменить категорию: {name}',
+    'Update Photo Doc: {name}' => 'Изменить данные документа: {name}',
+    'Update User Customer: {name}' => 'Изменить данные пользователя: {name}',
+    'Update Userdetail: {name}' => 'Изменить данные о пользователе: {name}',
+    'User Customers' => 'Пользователь',
+    'Userdetails' => 'Данные пользователя',
 ];

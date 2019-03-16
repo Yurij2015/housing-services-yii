@@ -19,7 +19,7 @@ use Yii;
  * @property Userdetail[] $userdetails
  * @property Usersoclogin[] $usersoclogins
  */
-class User extends \yii\db\ActiveRecord
+class UserCustomer extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
