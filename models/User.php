@@ -7,17 +7,16 @@ use Yii;
 /**
  * This is the model class for table "{{%user}}".
  *
- * @property int $iduser
- * @property string $userlogin
+ * @property int $id
+ * @property int $created_at
+ * @property int $updated_at
  * @property string $username
- * @property string $usersecondname
- * @property string $hpassword
- * @property string $datereg
- *
- * @property Entrhistory[] $entrhistories
- * @property PhotoDoc[] $photoDocs
- * @property Userdetail[] $userdetails
- * @property Usersoclogin[] $usersoclogins
+ * @property string $auth_key
+ * @property string $email_confirm_token
+ * @property string $password_hash
+ * @property string $password_reset_token
+ * @property string $email
+ * @property int $status
  */
 class User extends \yii\db\ActiveRecord
 {
@@ -35,10 +34,10 @@ class User extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['userlogin', 'hpassword', 'datereg'], 'required'],
-            [['datereg'], 'safe'],
-            [['userlogin', 'username', 'hpassword'], 'string', 'max' => 100],
-            [['usersecondname'], 'string', 'max' => 80],
+            [['created_at', 'updated_at', 'username', 'password_hash', 'email'], 'required'],
+            [['created_at', 'updated_at', 'status'], 'integer'],
+            [['username', 'email_confirm_token', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
+            [['auth_key'], 'string', 'max' => 32],
         ];
     }
 
@@ -48,44 +47,16 @@ class User extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'iduser' => Yii::t('db-label', 'Iduser'),
-            'userlogin' => Yii::t('db-label', 'Userlogin'),
+            'id' => Yii::t('db-label', 'ID'),
+            'created_at' => Yii::t('db-label', 'Created At'),
+            'updated_at' => Yii::t('db-label', 'Updated At'),
             'username' => Yii::t('db-label', 'Username'),
-            'usersecondname' => Yii::t('db-label', 'Usersecondname'),
-            'hpassword' => Yii::t('db-label', 'Hpassword'),
-            'datereg' => Yii::t('db-label', 'Datereg'),
+            'auth_key' => Yii::t('db-label', 'Auth Key'),
+            'email_confirm_token' => Yii::t('db-label', 'Email Confirm Token'),
+            'password_hash' => Yii::t('db-label', 'Password Hash'),
+            'password_reset_token' => Yii::t('db-label', 'Password Reset Token'),
+            'email' => Yii::t('db-label', 'Email'),
+            'status' => Yii::t('db-label', 'Status'),
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getEntrhistories()
-    {
-        return $this->hasMany(Entrhistory::className(), ['user_iduser' => 'iduser']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getPhotoDocs()
-    {
-        return $this->hasMany(PhotoDoc::className(), ['user_iduser' => 'iduser']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUserdetails()
-    {
-        return $this->hasMany(Userdetail::className(), ['user_iduser' => 'iduser']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUsersoclogins()
-    {
-        return $this->hasMany(Usersoclogin::className(), ['user_iduser' => 'iduser']);
     }
 }
