@@ -11,7 +11,17 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
     ],
+
+    'language'       =>'ru-RU',    // user language (for Locale)
+    'sourceLanguage' =>'unknown',  // language for messages and views
     'components' => [
+        'i18n' => [
+            'translations' => [
+                '*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                ],
+            ],
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'Nt_r7PRQtkhfl2HiM__Bl2MTNaySwca-',
@@ -41,6 +51,7 @@ $config = [
                     'levels' => ['error', 'warning'],
                 ],
             ],
+
         ],
         'db' => $db,
 
