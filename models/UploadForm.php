@@ -28,8 +28,11 @@ class UploadForm extends Model
 
     public function upload()
     {
+        //https://webformyself.com/yii2-izobrazheniya/
         if ($this->validate()) {
-            $this->imageFile->saveAs($_SERVER["DOCUMENT_ROOT"] . '/uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
+            $this->imageFile->saveAs($_SERVER["DOCUMENT_ROOT"] . '/web/uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
+            //$this->imageFile->saveAs( '/uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
+
             return true;
         } else {
             return false;
@@ -45,3 +48,5 @@ class UploadForm extends Model
     }
 
 }
+
+?>

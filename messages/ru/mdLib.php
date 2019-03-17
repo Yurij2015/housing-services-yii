@@ -35,5 +35,7 @@ return [
     'User Customers' => 'Пользователь',
     'Userdetails' => 'Данные пользователя',
     'UploadDoc' => 'Загрузить документ',
+    'Back' => 'Назад',
+
 
 ];

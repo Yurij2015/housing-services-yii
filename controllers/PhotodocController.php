@@ -135,11 +135,9 @@ class PhotodocController extends Controller
             $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
             if ($model->upload()) {
                 // file is uploaded successfully
-                return $this->redirect(['index']);
-;
+                return $this->render('upload', ['model' => $model]);
             }
         }
-
         return $this->render('upload', ['model' => $model]);
     }
 

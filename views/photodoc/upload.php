@@ -5,18 +5,30 @@
  * Date: 17-Mar-19
  * Time: 14:45
  */
+
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 
 ?>
 
-<?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
+<?php if($model->imageFile): ?>
+    <img src="/web/uploads/<?= $model->imageFile?>" alt="">
+<?php endif; ?>
 
-    <?= $form->field($model, 'imageFile')->fileInput() ?>
+<div class="row">
+    <div class="col-lg-5">
+
+        <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
+
+        <?= $form->field($model, 'imageFile')->fileInput() ?>
 
 
-    <div class="form-group">
-        <?= Html::submitButton(Yii::t('mdLib', 'Save'), ['class' => 'btn btn-success']) ?>
+        <div class="form-group">
+            <?= Html::submitButton(Yii::t('mdLib', 'Save'), ['class' => 'btn btn-success']) ?>
+
+            <?= Html::a(Yii::t('mdLib', 'Back'), ['index'], ['class' => 'btn btn-success']) ?>
+        </div>
+
+        <?php ActiveForm::end() ?>
     </div>
-
-<?php ActiveForm::end() ?>
+</div>

@@ -6,6 +6,7 @@ use dosamigos\tinymce\TinyMce;
 use app\models\Category;
 use yii\helpers\ArrayHelper;
 use app\models\User;
+use kartik\date\DatePicker;
 
 
 /* @var $this yii\web\View */
@@ -15,7 +16,7 @@ use app\models\User;
 
 <div class="photo-doc-form">
 
-    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
+    <?php $form = ActiveForm::begin(); ?>
 
     <?php $user = User::find()->all();
     // формируем массив, с ключем равным полю 'idcategory' и значением равным полю 'categoryname'
@@ -23,7 +24,7 @@ use app\models\User;
     $params = ['prompt' => 'Потребитель']; ?>
     <?= $form->field($model, 'user_iduser')->dropDownList($items, $params); ?>
 
-<!--    --><?//= $form->field($model, 'user_iduser')->textInput() ?>
+    <!--    --><? //= $form->field($model, 'user_iduser')->textInput() ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
@@ -44,8 +45,13 @@ use app\models\User;
         ]
     ]); ?>
 
-    <?= $form->field($model, 'dateadd')->textInput() ?>
-
+    <!--    --><? //= $form->field($model, 'dateadd')->textInput() ?>
+    <!--    https://webformyself.com/yii2-datepicker/-->
+    <?=
+    $form->field($model, 'dateadd')->widget(DatePicker::classname(), [
+        'value' => date('Y-M-d'),
+    ]);
+    ?>
     <!--https://p0vidl0.info/yii2-vypadayushhij-spisok-dropdownlist.html-->
     <?php $category = Category::find()->all();
     // формируем массив, с ключем равным полю 'idcategory' и значением равным полю 'categoryname'
@@ -54,8 +60,8 @@ use app\models\User;
     <?= $form->field($model, 'category_idcategory')->dropDownList($items, $params); ?>
     <!--    --><? //= $form->field($model, 'category_idcategory')->textInput() ?>
 
-<!--    --><?//= $form->field($model, 'doc_file')->textInput() ?>
-<!--    --><?//= $form->field($model, 'doc_file')->fileInput()?>
+    <!--    --><? //= $form->field($model, 'doc_file')->textInput() ?>
+    <!--    --><? //= $form->field($model, 'doc_file')->fileInput()?>
 
 
     <div class="form-group">

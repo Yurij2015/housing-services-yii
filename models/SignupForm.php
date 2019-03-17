@@ -69,4 +69,16 @@ class SignupForm extends Model
 
         return null;
     }
+
+    public function attributeLabels()
+    {
+        return [
+            'username' => Yii::t('db-label', 'username'),
+            'password' => Yii::t('db-label', 'password'),
+            'email' => Yii::t('db-label', 'email'),
+            'verifyCode' => Yii::t('db-label', 'verifyCode'),
+
+        ];
+    }
+
 }
