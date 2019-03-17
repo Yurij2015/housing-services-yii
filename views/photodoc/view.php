@@ -30,12 +30,20 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'idimage',
-            'user_iduser',
+            [
+                'attribute' => 'user_iduser',
+                'value' => $model->user->username,
+            ],
+           // 'user_iduser',
             'name',
             'description',
-            'doclink',
+            'doclink:html',
             'dateadd',
-            'category_idcategory',
+            //'category_idcategory',
+            [
+                'attribute' => 'category_idcategory',
+                'value' => $model->category->categoryname,
+            ],
             'doc_file',
         ],
     ]) ?>
