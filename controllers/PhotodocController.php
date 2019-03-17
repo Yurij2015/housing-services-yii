@@ -8,6 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * PhotodocController implements the CRUD actions for PhotoDoc model.
@@ -124,4 +125,20 @@ class PhotodocController extends Controller
 
         throw new NotFoundHttpException(Yii::t('mdLib', 'The requested page does not exist.'));
     }
+
+//    public function actionUpload()
+//    {
+//        $model = new PhotoDoc();
+//
+//        if (Yii::$app->request->isPost) {
+//            $model->doc_file = UploadedFile::getInstance($model, 'doc_file');
+//            if ($model->upload()) {
+//                // file is uploaded successfully
+//                return;
+//            }
+//        }
+//
+//        return $this->render('upload', ['model' => $model]);
+//    }
+
 }

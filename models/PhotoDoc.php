@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "{{%photo_doc}}".
@@ -37,14 +38,28 @@ class PhotoDoc extends \yii\db\ActiveRecord
         return [
             [['user_iduser', 'doclink', 'category_idcategory'], 'required'],
             [['user_iduser', 'category_idcategory'], 'integer'],
-            [['dateadd'], 'safe'],
+            [['dateadd', 'categoryname'], 'safe'],
             [['doc_file'], 'string'],
             [['name'], 'string', 'max' => 100],
             [['description', 'doclink'], 'string', 'max' => 255],
             [['category_idcategory'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['category_idcategory' => 'idcategory']],
-            [['user_iduser'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_iduser' => 'iduser']],
+            [['user_iduser'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_iduser' => 'id']],
+            // [['doc_file'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg, doc, docx, pdf'],
         ];
     }
+
+    /**
+     * Загрузка файла
+     */
+//    public function upload()
+//    {
+//        if ($this->validate()) {
+//            $this->doc_file->saveAs('uploads/' . $this->doc_file->baseName . '.' . $this->doc_file->extension);
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
 
     /**
      * {@inheritdoc}
@@ -66,7 +81,12 @@ class PhotoDoc extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCategoryIdcategory()
+//    public function getCategoryIdcategory()
+//    {
+//        return $this->hasOne(Category::className(), ['idcategory' => 'category_idcategory']);
+//    }
+
+    public function getCategory()
     {
         return $this->hasOne(Category::className(), ['idcategory' => 'category_idcategory']);
     }
@@ -74,8 +94,14 @@ class PhotoDoc extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getUserIduser()
+//    public function getUserIduser()
+//    {
+//        return $this->hasOne(User::className(), ['id' => 'user_iduser']);
+//    }
+
+    public function getUser()
     {
-        return $this->hasOne(User::className(), ['iduser' => 'user_iduser']);
+        return $this->hasOne(User::className(), ['id' => 'user_iduser']);
     }
+
 }

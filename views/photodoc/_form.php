@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 use dosamigos\tinymce\TinyMce;
 use app\models\Category;
 use yii\helpers\ArrayHelper;
+use app\models\User;
 
 
 /* @var $this yii\web\View */
@@ -14,9 +15,15 @@ use yii\helpers\ArrayHelper;
 
 <div class="photo-doc-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
-    <!--    --><? //= $form->field($model, 'user_iduser')->textInput() ?>
+    <?php $user = User::find()->all();
+    // формируем массив, с ключем равным полю 'idcategory' и значением равным полю 'categoryname'
+    $items = ArrayHelper::map($user, 'id', 'username');
+    $params = ['prompt' => 'Потребитель']; ?>
+    <?= $form->field($model, 'user_iduser')->dropDownList($items, $params); ?>
+
+<!--    --><?//= $form->field($model, 'user_iduser')->textInput() ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
@@ -48,6 +55,8 @@ use yii\helpers\ArrayHelper;
     <!--    --><? //= $form->field($model, 'category_idcategory')->textInput() ?>
 
     <?= $form->field($model, 'doc_file')->textInput() ?>
+<!--    --><?//= $form->field($model, 'doc_file')->fileInput()?>
+
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('mdLib', 'Save'), ['class' => 'btn btn-success']) ?>

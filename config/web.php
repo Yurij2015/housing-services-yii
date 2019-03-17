@@ -65,6 +65,7 @@ $config = [
 
     ],
     'params' => $params,
+    'name' => $params['name'],
 ];
 
 if (YII_ENV_DEV) {
