@@ -30,6 +30,7 @@ return [
     'Update Category: {name}' => 'Изменить категорию: {name}',
     'Update Photo Doc: {name}' => 'Изменить данные документа: {name}',
     'Update Userdetail: {name}' => 'Изменить данные о пользователе: {name}',
+    'UploadDoc' => 'Загрузить документ',
     'Userdetails' => 'Данные пользователя',
     'Create User Customer' => '@@Добавить пользователя@@',
     'Update User Customer: {name}' => '@@Изменить данные пользователя: {name}@@',

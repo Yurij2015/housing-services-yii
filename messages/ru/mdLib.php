@@ -34,4 +34,6 @@ return [
     'Update Userdetail: {name}' => 'Изменить данные о пользователе: {name}',
     'User Customers' => 'Пользователь',
     'Userdetails' => 'Данные пользователя',
+    'UploadDoc' => 'Загрузить документ',
+
 ];

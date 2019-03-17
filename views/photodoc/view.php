@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
-
+    <!--    https://p0vidl0.info/yii2-api-guides/guide-ru-output-data-widgets.html-->
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'user_iduser',
                 'value' => $model->user->username,
             ],
-           // 'user_iduser',
+            // 'user_iduser',
             'name',
             'description',
             'doclink:html',

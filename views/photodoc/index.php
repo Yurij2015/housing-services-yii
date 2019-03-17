@@ -17,6 +17,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a(Yii::t('mdLib', 'Create Photo Doc'), ['create'], ['class' => 'btn btn-success']) ?>
+
+        <?= Html::a(Yii::t('mdLib', 'UploadDoc'), ['upload'], ['class' => 'btn btn-success']) ?>
     </p>
     <!--    вывод связанных данных
     http://php-lessons.com/blog/2016/06/06/yii2-view-data-ralated-tables/-->

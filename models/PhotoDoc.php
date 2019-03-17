@@ -44,22 +44,8 @@ class PhotoDoc extends \yii\db\ActiveRecord
             [['description', 'doclink'], 'string', 'max' => 255],
             [['category_idcategory'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['category_idcategory' => 'idcategory']],
             [['user_iduser'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_iduser' => 'id']],
-            // [['doc_file'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg, doc, docx, pdf'],
         ];
     }
-
-    /**
-     * Загрузка файла
-     */
-//    public function upload()
-//    {
-//        if ($this->validate()) {
-//            $this->doc_file->saveAs('uploads/' . $this->doc_file->baseName . '.' . $this->doc_file->extension);
-//            return true;
-//        } else {
-//            return false;
-//        }
-//    }
 
     /**
      * {@inheritdoc}

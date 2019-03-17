@@ -54,7 +54,7 @@ use app\models\User;
     <?= $form->field($model, 'category_idcategory')->dropDownList($items, $params); ?>
     <!--    --><? //= $form->field($model, 'category_idcategory')->textInput() ?>
 
-    <?= $form->field($model, 'doc_file')->textInput() ?>
+<!--    --><?//= $form->field($model, 'doc_file')->textInput() ?>
 <!--    --><?//= $form->field($model, 'doc_file')->fileInput()?>
 
 
