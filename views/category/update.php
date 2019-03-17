@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Category */
 
 $this->title = Yii::t('mdLib', 'Update Category: {name}', [
-    'name' => $model->idcategory,
+    'name' => $model->categoryname,
 ]);
 $this->params['breadcrumbs'][] = ['label' => Yii::t('mdLib', 'Categories'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->idcategory, 'url' => ['view', 'id' => $model->idcategory]];

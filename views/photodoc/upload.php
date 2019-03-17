@@ -11,8 +11,9 @@ use yii\helpers\Html;
 
 ?>
 
-<?php if($model->imageFile): ?>
-    <img src="/web/uploads/<?= $model->imageFile?>" alt="">
+<?php if ($model->imageFile): ?>
+    <?= 'Вы загрузили на сервер изображение:' ?>
+    <img src="/web/uploads/<?= $model->imageFile ?>" alt="" width="700px">
 <?php endif; ?>
 
 <div class="row">
