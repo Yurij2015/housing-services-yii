@@ -13,7 +13,6 @@ $config = [
         '@npm' => '@vendor/npm-asset',
     ],
 
-    'language'       =>'ru-RU',    // user language (for Locale)
     'sourceLanguage' =>'unknown',  // language for messages and views
     'components' => [
         'i18n' => [
@@ -53,20 +52,6 @@ $config = [
                 ],
             ],
 
-        ],
-
-        'i18n' => [
-            'translations' => [
-                'app*' => [
-                    'class' => 'yii\i18n\PhpMessageSource',
-                    //'basePath' => '@app/messages',
-                    //'sourceLanguage' => 'en-US',
-                    'fileMap' => [
-                        'app'       => 'app.php',
-                        'app/error' => 'error.php',
-                    ],
-                ],
-            ],
         ],
 
         'db' => $db,
