@@ -9,6 +9,9 @@
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 
+$this->title = Yii::t('mdLib', 'imageFile');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('db-label', 'imageFile'), 'url' => ['upload']];
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php if ($model->imageFile): ?>
     <?= 'Вы загрузили на сервер изображение:' ?>

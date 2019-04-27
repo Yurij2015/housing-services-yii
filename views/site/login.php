@@ -36,6 +36,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <div style="color:#999;margin:1em 0">
         Потерян доступ? <?= Html::a('Сбросте пароль!', ['password-reset-request']) ?>.
     </div>
+    <div style="color:#999;margin:1em 0">
+            <p>Нет аккаунта? <?= Html::a('Регистрация!', ['user/signup']) ?></p>
+    </div>
 
     <div class="form-group">
         <div class="col-lg-offset-2 col-lg-11">

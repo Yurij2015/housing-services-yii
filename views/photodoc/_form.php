@@ -24,13 +24,13 @@ use kartik\date\DatePicker;
     <!--    Поле выбора пользователя-->
     <?= $form->field($model, 'user_iduser')->dropDownList($items, $params); ?>
 
-    <!--    --><? //= $form->field($model, 'user_iduser')->textInput() ?>
+    <!--    <? //= $form->field($model, 'user_iduser')->textInput() ?>-->
     <!--    Поле ввода названия документа-->
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
     <!--    Поле ввода описания документа-->
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
-    <!--    --><? //= $form->field($model, 'doclink')->textInput(['maxlength' => true]) ?>
+    <!--    <? //= $form->field($model, 'doclink')->textInput(['maxlength' => true]) ?>-->
     <!--    Поле ввода данных о услугах ЖКГ с подключенным визуальных редактором TinyMCE-->
     <?= $form->field($model, 'doclink')->widget(TinyMce::className(), [
         'options' => ['rows' => 20],
