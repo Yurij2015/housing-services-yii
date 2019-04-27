@@ -17,22 +17,21 @@ use kartik\date\DatePicker;
 <div class="photo-doc-form">
 
     <?php $form = ActiveForm::begin(); ?>
-
     <?php $user = User::find()->all();
     // формируем массив, с ключем равным полю 'idcategory' и значением равным полю 'categoryname'
     $items = ArrayHelper::map($user, 'id', 'username');
     $params = ['prompt' => 'Потребитель']; ?>
-    // Поле выбора пользователя
+    <!--    Поле выбора пользователя-->
     <?= $form->field($model, 'user_iduser')->dropDownList($items, $params); ?>
 
     <!--    --><? //= $form->field($model, 'user_iduser')->textInput() ?>
-    // Поле ввода названия документа
+    <!--    Поле ввода названия документа-->
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-    // Поле ввода описания документа
+    <!--    Поле ввода описания документа-->
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
     <!--    --><? //= $form->field($model, 'doclink')->textInput(['maxlength' => true]) ?>
-    // Поле ввода данных о услугах ЖКГ с подключенным визуальных редактором TinyMCE
+    <!--    Поле ввода данных о услугах ЖКГ с подключенным визуальных редактором TinyMCE-->
     <?= $form->field($model, 'doclink')->widget(TinyMce::className(), [
         'options' => ['rows' => 20],
         'language' => 'ru',

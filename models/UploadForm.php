@@ -12,6 +12,7 @@ use Yii;
 use yii\base\Model;
 use yii\web\UploadedFile;
 
+// класс загрузки файла на сервера
 class UploadForm extends Model
 {
     /**
@@ -19,6 +20,7 @@ class UploadForm extends Model
      */
     public $imageFile;
 
+// правила для загружаемых файлов
     public function rules()
     {
         return [
@@ -26,6 +28,7 @@ class UploadForm extends Model
         ];
     }
 
+// метод загрузки файла, формирование пути и сохранение файла
     public function upload()
     {
         //https://webformyself.com/yii2-izobrazheniya/
@@ -38,7 +41,7 @@ class UploadForm extends Model
             return false;
         }
     }
-
+// перевод аттрибутов
     public function attributeLabels()
     {
         return [
