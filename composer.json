@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "2amigos/yii2-tinymce-widget": "~1.1",
         "2amigos/yii2-file-upload-widget": "~1.0",
-        "kartik-v/yii2-widget-datepicker": "@dev"
+        "kartik-v/yii2-widget-datepicker": "@dev",
+        "phpmetrics/phpmetrics": "^2.4"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
