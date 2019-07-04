@@ -39,7 +39,7 @@ class PhotoDoc extends \yii\db\ActiveRecord
             [['user_iduser', 'doclink', 'category_idcategory'], 'required'],
             [['user_iduser', 'category_idcategory'], 'integer'],
             [['dateadd', 'categoryname'], 'safe'],
-            [['doc_file'], 'string'],
+//            [['doc_file'], 'string'],
             [['name'], 'string', 'max' => 100],
             [['description', 'doclink'], 'string', 'max' => 255],
             [['category_idcategory'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['category_idcategory' => 'idcategory']],
@@ -60,7 +60,7 @@ class PhotoDoc extends \yii\db\ActiveRecord
             'doclink' => Yii::t('db-label', 'Doclink'),
             'dateadd' => Yii::t('db-label', 'Dateadd'),
             'category_idcategory' => Yii::t('db-label', 'Category Idcategory'),
-            'doc_file' => Yii::t('db-label', 'Doc File'),
+//            'doc_file' => Yii::t('db-label', 'Doc File'),
         ];
     }
 

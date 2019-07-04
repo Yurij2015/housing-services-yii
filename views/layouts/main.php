@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this \yii\web\View */
+
 /* @var $content string */
 
 use app\widgets\Alert;
@@ -40,9 +41,9 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Главная', 'url' => ['/site/index']],
             ['label' => 'О сайте', 'url' => ['/site/about']],
-            ['label' => 'Обратная связь', 'url' => ['/site/contact']],
+//            ['label' => 'Обратная связь', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
-                ['label' => 'Авторизация', 'url' => ['/site/login']]
+            ['label' => 'Авторизация', 'url' => ['/site/login']]
             ) : (
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
@@ -52,7 +53,20 @@ AppAsset::register($this);
                 )
                 . Html::endForm()
                 . '</li>'
-            )
+            ),
+            [
+                'label' => Yii::t('mdLib', 'Photo Docs'),
+                'url' => ['/photodoc/index'],
+                'visible' => !Yii::$app->user->isGuest
+            ],
+            [
+                'label' => Yii::t('mdLib', 'Categories'),
+                'url' => ['/category/index'],
+                'visible' => !Yii::$app->user->isGuest
+            ],
+//            Yii::$app->user->isGuest ? (
+//            ['label' => 'Регистрация', 'url' => ['/user/signup']]
+//            ) : (''),
         ],
     ]);
     NavBar::end();
@@ -69,7 +83,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left"><?=Yii::$app->name?> <?= date('Y') ?></p>
+        <p class="pull-left"><?= Yii::$app->name ?> <?= date('Y') ?></p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>

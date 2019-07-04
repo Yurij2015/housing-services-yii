@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'category_idcategory',
                 'value' => $model->category->categoryname,
             ],
-            'doc_file:html',
+            //'doc_file:html',
         ],
     ]) ?>
 
